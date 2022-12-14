@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import { useState, useEffect } from 'react';
 export default GoodPage;
 
 
@@ -9,13 +10,63 @@ function GoodTopSection() {
     return (
         <div class="good-top-section">
             <img class="header-img" src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBxWf6r.img?w=36&h=36&q=60&m=6&f=png&u=t" />
-            <h3 class="header-title" style="left: 80px; margin-top: 15px;">The Telegraph</h3>
+            <h3 class="header-title">The Telegraph</h3>
         </div>
 
     )
 }
 
 function GoodSection2() {
+    const [currentValue, setValue] = useState(0);
+
+    useEffect(() => {
+        const image_array = ['#img-1', '#img-2', '#img-3', '#img-4', '#img-5', '#img-6', '#img-7', '#img-8'];
+
+        if (document.getElementById('2').checked) {
+            for (let x of image_array) {
+                document.querySelector(x).classList.remove('reveal-image')
+            }
+            for (let y = 0; y < 2; y++) {
+                let randomIndex = Math.floor(Math.random() * image_array.length);
+                const item = image_array[randomIndex];
+                document.querySelector(item).classList.add('reveal-image')
+                image_array.splice(randomIndex, 1);
+            }
+        }
+        else if (document.getElementById('4').checked) {
+            for (let x of image_array) {
+                document.querySelector(x).classList.remove('reveal-image')
+            }
+            for (let y = 0; y < 4; y++) {
+                let randomIndex = Math.floor(Math.random() * image_array.length);
+                const item = image_array[randomIndex];
+                document.querySelector(item).classList.add('reveal-image')
+                image_array.splice(randomIndex, 1);
+            }
+        }
+        else if (document.getElementById('6').checked) {
+            for (let x of image_array) {
+                document.querySelector(x).classList.remove('reveal-image')
+            }
+            for (let y = 0; y < 6; y++) {
+                let randomIndex = Math.floor(Math.random() * image_array.length);
+                const item = image_array[randomIndex];
+                document.querySelector(item).classList.add('reveal-image')
+                image_array.splice(randomIndex, 1);
+            }
+        }
+        else if (document.getElementById('8').checked) {
+            for (let x of image_array) {
+                document.querySelector(x).classList.remove('reveal-image')
+            }
+            for (let y = 0; y < 8; y++) {
+                let randomIndex = Math.floor(Math.random() * image_array.length);
+                const item = image_array[randomIndex];
+                document.querySelector(item).classList.add('reveal-image')
+                image_array.splice(randomIndex, 1);
+            }
+        }
+    });
 
     return (
         <div class="good-section-2">
@@ -29,8 +80,7 @@ function GoodSection2() {
                 <label for="6">6</label> <br /><br />
                 <input type="radio" id="8" name="radio_set1" value="8" />
                 <label for="8">8</label><br /><br />
-
-                <input type="button" name="submit" value="submit" onclick="checkImage()" />
+                <input type="button" name="submit" value="submit" onClick={() => setValue(currentValue + 1)} />
             </form>
         </div>
     )

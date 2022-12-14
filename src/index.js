@@ -24,7 +24,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
-            <Route path="good-page" element={<HomePage />} />
+            <Route path="good-page" element={<GoodPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
