@@ -2,7 +2,7 @@ export default Section3;
 
 function Section3() {
     return (
-        <div>
+        <div id='section-3-div'>
             <p>The Chinese Government has accused Britain of failing to “fulfil its relevant obligation” after Beijing’s bid for a “super embassy” on the site of the old Royal Mint was blocked.</p>
             <p>They illustrated the failings in the table below:</p>
             <br />

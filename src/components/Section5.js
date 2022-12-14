@@ -18,16 +18,26 @@ function Section5() {
         }
         else if (document.getElementById('Britain-Bad').checked) {
             let radioValue = document.getElementById('Britain-Bad').value;
-            console.log(radioValue);
-            //document.getElementById("bad-title").innerHTML = "comments";
+            const array_1 = ['top-section-div', 'section-2-div', 'table-1', 'section-4-div'];
+
+             for (let x of array_1){
+                 document.getElementById(x).classList.add('spin-clockwise');   
+                 }
+
+             const array_2 = ['navbar-button', 'exhibit-a', 'section-4-form', 'section-3-div'];
+
+             for (let y of array_2){
+                 document.getElementById(y).classList.add('spin-anti-clockwise');   
+                 }
+            document.getElementById('image-container').classList.add('vert-move');
         }
     });
 
     return (
-        <div className='section-4'>
+        <div id='section-4-div' className='section-4'>
             <p>If you have any further information to add, please fill in and submit the form below!</p>
 
-            <form action="https://www.mirror.co.uk/news/world-news/boyracers-car-stuck-up-a-tree-825470">
+            <form id='section-4-form' action="https://www.mirror.co.uk/news/world-news/boyracers-car-stuck-up-a-tree-825470">
                 <input type="radio" id="Britain-Good" name="radio_set1" value="Britain Good" />
                 <label for="Britain-Good">Britain Good</label> <br /><br />
                 <input type="radio" id="Britain-Bad" name="radio_set1" value="Britain Bad" />
