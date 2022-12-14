@@ -5,6 +5,7 @@ export default Section5;
 function Section5() {
     const [currentValue, setValue] = useState(0);
     const navigate = useNavigate();
+    let test;
     useEffect(() => {
         
         let britainGood = document.getElementById("Britain-Good").value;
@@ -13,7 +14,6 @@ function Section5() {
 
         if (document.getElementById('Britain-Good').checked) {
             let radioValue = document.getElementById('Britain-Good').value;
-            console.log(radioValue);
             navigate("/good-page");
         }
         else if (document.getElementById('Britain-Bad').checked) {
@@ -30,7 +30,9 @@ function Section5() {
                  document.getElementById(y).classList.add('spin-anti-clockwise');   
                  }
             document.getElementById('image-container').classList.add('vert-move');
+            
         }
+    
     });
 
     return (

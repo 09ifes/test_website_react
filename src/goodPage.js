@@ -21,7 +21,8 @@ function GoodSection2() {
 
     useEffect(() => {
         const image_array = ['#img-1', '#img-2', '#img-3', '#img-4', '#img-5', '#img-6', '#img-7', '#img-8'];
-
+        
+        
         if (document.getElementById('2').checked) {
             for (let x of image_array) {
                 document.querySelector(x).classList.remove('reveal-image')
@@ -37,7 +38,7 @@ function GoodSection2() {
             for (let x of image_array) {
                 document.querySelector(x).classList.remove('reveal-image')
             }
-            for (let y = 0; y < 4; y++) {
+            for (let y = 0; y < 4 ; y++) {
                 let randomIndex = Math.floor(Math.random() * image_array.length);
                 const item = image_array[randomIndex];
                 document.querySelector(item).classList.add('reveal-image')
